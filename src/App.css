@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+:root {
+  --black : #082032;
+  --dark-gray : #2C394B;
+  --light-gray : #334756;
+  --red : #FF4C29;
+  --light : #DDDDDD;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+body {
   flex-direction: column;
+  background: linear-gradient(45deg, var(--black) 0%, rgba(51,71,86,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.profile-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: right;
+}
+.profile-container h1 {
+  background: var(--red);
+  font-size: 2.2rem;
+  font-weight: 800;
+  padding: 5px 20px;
+}
+.profile-container h3 {
+  margin-top: 0;
+  background: var(--light);
+  padding: 5px 20px;
+}
+.profile-container p {
+  color: var(--light);
+}
+.bio {
+  z-index: 2;
+  margin-left: 200px;
+  margin-top: 200px;
+  width: auto;
+}
+
+.profile-container img {
+  z-index: 1;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.social-icon {
+  font-size: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.social-icon:hover {
+  color: var(--red);
+  transform: scale(1.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width : 420px) {
+  .profile-container {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: start;
   }
-  to {
-    transform: rotate(360deg);
+  .profile-container h1 {
+    font-size: 18pt;
+  }
+  .profile-container img {
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .divider, .logo, .dark-mode, .link span  {
+    display: none;
+  }
+  .bio {
+    padding-bottom: 20px;
+    margin-top: -420px;
+    margin-left: 0;
+    background: linear-gradient(to top, #082032 0%, rgba(51, 71, 86, 0.918) 50%, rgba(51, 71, 86, 0.315) 70% , rgba(51, 71, 86, 0) 100%);
+  }
+  .bio p, .social-media {
+    margin-left: 10pt;
   }
 }
+
